@@ -1,11 +1,11 @@
 import React from "react";
 import { Card } from "antd";
 import Meta from "antd/es/card/Meta";
+import { StarOutlined } from "@ant-design/icons";
 
 const PokemonCard = () => {
   return (
     <Card
-      style={{ width: 250 }}
       title="Ditto"
       cover={
         <img
@@ -13,6 +13,7 @@ const PokemonCard = () => {
           alt="Ditto"
         />
       }
+      extra={<StarOutlined />}
     >
       <Meta description="magic, fire" />
     </Card>
