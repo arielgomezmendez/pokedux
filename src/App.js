@@ -1,7 +1,7 @@
 import "./App.css";
 import Searcher from "./components/Searcher/Searcher";
 import { Col } from "antd";
-import PokemonCard from "./components/PokemonCard/PokemonCard";
+import PokemonList from "./components/PokemonList/PokemonList";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Col span={8} offset={8}>
         <Searcher />
       </Col>
-      <PokemonCard />
+      <PokemonList />
     </div>
   );
 }
