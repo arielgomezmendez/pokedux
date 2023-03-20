@@ -4,15 +4,18 @@ import { Col } from "antd";
 import PokemonList from "./components/PokemonList/PokemonList";
 import logo from "../src/statics/logo.svg";
 import { getPokemon } from "./api";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [pokemons, setPokemons] = useState([]); //state to save the data from API
+
   useEffect(() => {
-    const fetchPokemon = async () => {
-      await getPokemon();
+    const fetchPokemons = async () => {
+      const pokemonsRes = await getPokemon();
+      setPokemons(pokemonsRes);
     };
 
-    fetchPokemon();
+    fetchPokemons();
   }, []);
   return (
     <div className="App">
@@ -22,7 +25,7 @@ function App() {
       <Col span={8} offset={8}>
         <Searcher />
       </Col>
-      <PokemonList />
+      <PokemonList pokemons={pokemons} />
     </div>
   );
 }
